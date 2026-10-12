@@ -98,16 +98,6 @@ In the sequential calibration experiment, both Fisher-based strategies achieve l
 
 For the simulated parameter evolution, adaptive Fisher selection reduced the mean parameter RMSE by approximately 93% and the mean out-of-sample pricing RMSE by approximately 67% relative to random selection.
 
-- The effectiveness of continuous recalibration of the optimal subset is inconclusive
-
-Recalculating the optimal subset as the model evolves requires more computational cost but its improvement in parameter estimation and out-of-sample pricing compared to a fixed initial subset is inconclusive:
-
-approximately ..% improvement in parameter RMSE
-
-approximately -2% improvement in out-of-sample pricing RMSE
-
-The fixed strategy is further chosen as it provides a more computationally efficient approach, requiring only a single subset-selection step.
-
 - Parameter accuracy, pricing accuracy and Greeks are distinct objectives
 
 The experiments also show that accurate parameter recovery does not imply strong performance for every downstream quantity.
@@ -117,38 +107,65 @@ The Fisher-selected subset performs within 10% RMSE for parameter estimation com
 ## Project Structure
 
 derivatives-research/
+
 │
+
 ├── notebooks/
+
 │   ├── main/
+
 │   │   ├── 04_fisher_information_selection.ipynb
+
 │   │   └── 05_sequential_calibration.ipynb
+
 │   └── development/
+
 │       ├── 01_black_scholes.ipynb
+
 │       ├── 02_heston_pricing.ipynb
+
 │       └── 03_heston_calibration.ipynb
+
 │
+
 ├── src/
+
 │   ├── pricing/
+
 │   └── calibration/
+
 │
+
 ├── tests/
+
 │   ├── test_black_scholes.py
+
 │   ├── test_montecarlo.py
+
 │   ├── test_heston.py
+
 │   └── test_heston_cf.py
+
 │
+
 ├── pyproject.toml
+
 └── README.md
 
 The notebooks develop the project progressively:
 
 Development and validation: 
+
 Notebook 01: Black–Scholes pricing and implied volatility validation
+
 Notebook 02: Heston pricing and Monte Carlo validation 
+
 Notebook 03: Heston parameter calibration validation
 
 Main experiments:
+
 Notebook 04: Fisher-information mapping and D-optimal option selection
+
 Notebook 05: Sequential calibration and comparison of selection strategies
 
 The reusable pricing, calibration and selection methods are implemented in src/, while the notebooks contain the experiments and analysis. The tests/ folder contains the unit tests for the functions implemented in src/.

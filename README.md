@@ -107,54 +107,28 @@ The Fisher-selected subset performs within 10% RMSE for parameter estimation com
 ## Project Structure
 
 derivatives-research/
-
-│
-
-├── notebooks/
-
-│   ├── main/
-
-│   │   ├── 04_fisher_information_selection.ipynb
-
-│   │   └── 05_sequential_calibration.ipynb
-
-│   └── development/
-
-│       ├── 01_black_scholes.ipynb
-
-│       ├── 02_heston_pricing.ipynb
-
-│       └── 03_heston_calibration.ipynb
-
-│
-
-├── src/
-
-│   ├── pricing/
-
-│   └── calibration/
-
-│
-
-├── tests/
-
-│   ├── test_black_scholes.py
-
-│   ├── test_montecarlo.py
-
-│   ├── test_heston.py
-
-│   └── test_heston_cf.py
-
-│
-
-├── pyproject.toml
-
-└── README.md
+    notebooks/
+        main/
+            04_fisher_information_selection.ipynb
+            05_sequential_calibration.ipynb
+        development/
+            01_black_scholes.ipynb
+            02_heston_pricing.ipynb
+            03_heston_calibration.ipynb
+    src/
+        pricing/
+        calibration/
+    tests/
+        test_black_scholes.py
+        test_montecarlo.py
+        test_heston.py
+        test_heston_cf.py
+    pyproject.toml
+    README.md
 
 The notebooks develop the project progressively:
 
-Development and validation: 
+- Development and validation: 
 
 Notebook 01: Black–Scholes pricing and implied volatility validation
 
@@ -162,7 +136,7 @@ Notebook 02: Heston pricing and Monte Carlo validation
 
 Notebook 03: Heston parameter calibration validation
 
-Main experiments:
+- Main experiments:
 
 Notebook 04: Fisher-information mapping and D-optimal option selection
 

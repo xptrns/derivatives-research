@@ -106,26 +106,6 @@ The Fisher-selected subset performs within 10% RMSE for parameter estimation com
 
 ## Project Structure
 
-derivatives-research/
-    notebooks/
-        main/
-            04_fisher_information_selection.ipynb
-            05_sequential_calibration.ipynb
-        development/
-            01_black_scholes.ipynb
-            02_heston_pricing.ipynb
-            03_heston_calibration.ipynb
-    src/
-        pricing/
-        calibration/
-    tests/
-        test_black_scholes.py
-        test_montecarlo.py
-        test_heston.py
-        test_heston_cf.py
-    pyproject.toml
-    README.md
-
 The notebooks develop the project progressively:
 
 - Development and validation: 
